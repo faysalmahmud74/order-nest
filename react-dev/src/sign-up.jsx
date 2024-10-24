@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { PiEye, PiEyeSlash } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
+import { DEFAULT_IMAGE_URL } from './components/constants';
 
 const SignUpForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -35,8 +36,8 @@ const SignUpForm = () => {
 
                 <div className="flex justify-center mb-4">
                     <img
-                        src='/public/Pocket-X-Logo-PNG.png'  // Replace with your logo URL or import
-                        alt="pocketX"
+                        src={DEFAULT_IMAGE_URL}  // Replace with your logo URL or import
+                        alt="image"
                         className="h-auto w-24"
                     />
                 </div>
