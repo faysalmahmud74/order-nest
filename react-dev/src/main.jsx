@@ -10,6 +10,8 @@ import OrderNav from './order/index.jsx';
 import EmployeeNav from './employe/index.jsx';
 import ReportsNav from './reports/index.jsx';
 import SettingsNav from './settings/index.jsx';
+import NewEmployee from './employe/new.jsx';
+import EmployeeList from './employe/list.jsx';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -24,10 +26,17 @@ root.render(
         <Route path="/dashboard" element={<App />} />
         <Route path="/signUp" element={<SignUpForm />} />
         <Route path="/app" element={<HomePage />} />
+
         <Route path="/order" element={<OrderNav />} />
+
         <Route path="/employees" element={<EmployeeNav />} />
+        <Route path="/employees/new" element={<NewEmployee />} />
+        <Route path="/employees/list" element={<EmployeeList />} />
+
         <Route path="/delivery" element={<EmployeeNav />} />
+
         <Route path="/reports" element={<ReportsNav />} />
+
         <Route path="/settings" element={<SettingsNav />} />
 
         {/* Add additional routes as needed */}
