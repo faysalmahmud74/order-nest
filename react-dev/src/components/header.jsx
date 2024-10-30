@@ -42,7 +42,7 @@ const Header = () => {
                 />
 
                 <img
-                    src='public/avatar.svg'
+                    src='/public/avatar.svg'
                     alt="Avatar"
                     className="border rounded-full cursor-pointer"
                     style={{

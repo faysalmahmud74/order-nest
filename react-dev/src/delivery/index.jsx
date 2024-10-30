@@ -1,20 +1,20 @@
 import Module from "../custom-components/module-card";
 import Layout from "../layout";
-import { FaCartShopping } from "react-icons/fa6";
+import { MdDeliveryDining } from "react-icons/md";
 
-export default function OrderNav() {
+export default function DeliveryNav() {
     const modules = [
         {
-            icon: < FaCartShopping size={40} color="#0d9488" />,
-            name: "New Order",
-            description: "Manage Order",
-            path: '/order/new'
+            icon: <MdDeliveryDining size={40} color="#0d9488" />,
+            name: "New Delivery",
+            description: "Manage Delivery",
+            path: '/dekivery/new'
         },
         {
             icon: null,
-            name: "View Order",
-            description: "View Orders",
-            path: '/order/list'
+            name: "Delivery List",
+            description: "View Delivery",
+            path: '/delivery/list'
         },
     ]
     return (

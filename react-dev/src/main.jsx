@@ -14,6 +14,8 @@ import NewEmployee from './employe/new.jsx';
 import EmployeeList from './employe/list.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DeliveryNav from './delivery/index.jsx';
+import NotFound from './components/not-found.jsx';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -46,7 +48,7 @@ root.render(
         <Route path="/employees/new" element={<NewEmployee />} />
         <Route path="/employees/list" element={<EmployeeList />} />
 
-        <Route path="/delivery" element={<EmployeeNav />} />
+        <Route path="/delivery" element={<DeliveryNav />} />
 
         <Route path="/reports" element={<ReportsNav />} />
 
@@ -54,6 +56,9 @@ root.render(
 
         {/* Add additional routes as needed */}
         {/* <Route path="/another-page" element={<AnotherPage />} /> */}
+
+        {/* Catch-all route for undefined paths */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   </StrictMode>
