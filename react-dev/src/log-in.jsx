@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PiEye, PiEyeSlash } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
 import { DEFAULT_IMAGE_URL } from './components/constants';
+import { toast } from 'react-toastify';
 
 const LoginForm = () => {
     const router = useNavigate();
@@ -21,6 +22,7 @@ const LoginForm = () => {
 
     const _submitLogIn = () => {
         if (userName.length > 0 || pass.length > 0) {
+            toast.success("Log in successful")
             router('/dashboard');
         }
         else {

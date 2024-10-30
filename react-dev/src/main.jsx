@@ -12,12 +12,25 @@ import ReportsNav from './reports/index.jsx';
 import SettingsNav from './settings/index.jsx';
 import NewEmployee from './employe/new.jsx';
 import EmployeeList from './employe/list.jsx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = createRoot(document.getElementById('root'));
 
 root.render(
   <StrictMode>
     <Router>
+
+      <ToastContainer  //react-toastify config defalut
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        pauseOnHover
+        theme="colored"
+      />
+
       <Routes>
         {/* Route for Login Page */}
         <Route path="/" element={<LoginForm />} />

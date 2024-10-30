@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Header = () => {
     const router = useNavigate();
@@ -9,7 +10,7 @@ const Header = () => {
     const menuRef = useRef(null);
 
     const handleLogout = () => {
-        alert("Log out success");
+        toast.error("Logged out");
         router('/');
     };
 
