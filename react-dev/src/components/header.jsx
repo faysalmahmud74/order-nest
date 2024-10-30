@@ -35,14 +35,14 @@ const Header = () => {
         <div className='relative'>
             <header className="fixed top-0 w-full bg-white flex justify-between items-center p-4 border-b border-white z-50">
                 <img
-                    src='/public/pngkey.com-domino-png-2349823.png'
+                    src='/pngkey.com-domino-png-2349823.png'
                     alt="Logo"
                     className="h-auto w-24 cursor-pointer"
                     onClick={() => router('/dashboard')}
                 />
 
                 <img
-                    src='/public/avatar.svg'
+                    src='/avatar.svg'
                     alt="Avatar"
                     className="border rounded-full cursor-pointer"
                     style={{

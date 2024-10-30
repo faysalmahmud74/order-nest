@@ -7,7 +7,7 @@ const NotFound = () => {
         <Layout>
             <div className="flex justify-center bg-gray-100 mt-5">
                 <img
-                    src='/public/access_denied.png'
+                    src='/access_denied.png'
                     alt="Avatar"
                     className="w-full"
                     style={{

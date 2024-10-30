@@ -35,7 +35,7 @@ const HomePage = () => {
                                     <p>Manage your employees efficiently.</p>
                                     <div className='mt-3'>
                                         <img
-                                            src='/public/Screenshot 2024-10-24 203352.png'  // Replace with your logo URL or import
+                                            src='/Screenshot 2024-10-24 203352.png'  // Replace with your logo URL or import
                                             alt="employee chart"
                                             className="h-auto w-full"
                                             style={{
@@ -57,7 +57,7 @@ const HomePage = () => {
                                     <p>Manage your delivery efficiently.</p>
                                     <div className='mt-3'>
                                         <img
-                                            src='/public/Screenshot 2024-10-24 202851.png'  // Replace with your logo URL or import
+                                            src='/Screenshot 2024-10-24 202851.png'  // Replace with your logo URL or import
                                             alt="delivery chart"
                                             className="h-auto w-full"
                                             style={{
