@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Layout from '../layout';
 import Card from '../custom-components/card';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
-export default function NewEmployee({ onSubmit }) {
+export default function NewEmployee() {
+    const router = useNavigate()
     const [employee, setEmployee] = useState({
         name: '',
         email: '',
@@ -17,9 +20,10 @@ export default function NewEmployee({ onSubmit }) {
     };
 
     const handleSubmit = (e) => {
+        toast.success('Employee Added Successfully')
         e.preventDefault();
-        onSubmit(employee); // Pass the employee data to the parent component or handle submission here
         setEmployee({ name: '', email: '', position: '', department: '', startDate: '' }); // Reset form after submission
+        router('/employees/list')
     };
 
     return (

@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { DEFAULT_USER_IMAGE_URL } from './constants';
+import Breadcrumbs from './breadcrumbs';
 
 const Header = () => {
     const router = useNavigate();
@@ -34,15 +36,20 @@ const Header = () => {
     return (
         <div className='relative'>
             <header className="fixed top-0 w-full bg-white flex justify-between items-center p-4 border-b border-white z-50">
-                <img
-                    src='/pngkey.com-domino-png-2349823.png'
-                    alt="Logo"
-                    className="h-auto w-24 cursor-pointer"
-                    onClick={() => router('/dashboard')}
-                />
+                <div className='flex'>
+                    <div className='w-[255px]'>
+                        <img
+                            src='/pngkey.com-domino-png-2349823.png'
+                            alt="Logo"
+                            className="h-auto w-24 cursor-pointer"
+                            onClick={() => router('/dashboard')}
+                        />
+                    </div>
+                    <Breadcrumbs />
+                </div>
 
                 <img
-                    src='/avatar.svg'
+                    src={DEFAULT_USER_IMAGE_URL}
                     alt="Avatar"
                     className="border rounded-full cursor-pointer"
                     style={{

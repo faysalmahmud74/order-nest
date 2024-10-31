@@ -8,7 +8,7 @@ export default function DeliveryNav() {
             icon: <MdDeliveryDining size={40} color="#0d9488" />,
             name: "New Delivery",
             description: "Manage Delivery",
-            path: '/dekivery/new'
+            path: '/delivery/new'
         },
         {
             icon: null,
