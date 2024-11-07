@@ -22,7 +22,7 @@ const LoginForm = () => {
 
     const _submitLogIn = () => {
         if (userName.length > 0 || pass.length > 0) {
-            toast.success("Log in successful")
+            toast.success("Login Successful! Welcome back!")
             router('/dashboard');
         }
         else {

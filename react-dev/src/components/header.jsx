@@ -16,6 +16,10 @@ const Header = () => {
         router('/');
     };
 
+    const _toProfile = () => {
+        router('/profile');
+    };
+
     const toggleMenu = () => {
         setIsMenu(prev => !prev);  // Toggle the menu
     };
@@ -62,7 +66,7 @@ const Header = () => {
 
                 {isMenu && (
                     <div ref={menuRef} className="absolute right-2 mt-20 w-48 bg-white shadow-md rounded z-50">
-                        <div className="flex items-center px-4 py-2 text-sm cursor-pointer hover:bg-gray-100">
+                        <div className="flex items-center px-4 py-2 text-sm cursor-pointer hover:bg-gray-100" onClick={_toProfile}>
                             <FaUserCircle className="mr-2" />
                             Profile
                         </div>
