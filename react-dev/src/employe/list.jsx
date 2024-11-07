@@ -3,13 +3,14 @@ import Table from '../custom-components/table';
 import Layout from '../layout';
 
 export default function EmployeeTable() {
-    const columns = [
-        { title: 'Name', dataIndex: 'name', key: 'name' },
-        { title: 'Email', dataIndex: 'email', key: 'email' },
-        { title: 'Position', dataIndex: 'position', key: 'position' },
-        { title: 'Department', dataIndex: 'department', key: 'department' },
-        { title: 'Start Date', dataIndex: 'startDate', key: 'startDate' },
+const columns = [
+        { title: 'Name', dataIndex: 'name', key: 'name', width: '20%' },
+        { title: 'Email', dataIndex: 'email', key: 'email', width: '20%' },
+        { title: 'Position', dataIndex: 'position', key: 'position', width: '20%' },
+        { title: 'Department', dataIndex: 'department', key: 'department', width: '20%' },
+        { title: 'Start Date', dataIndex: 'startDate', key: 'startDate', width: '20%' },
     ];
+
 
     const data = [
         { key: '1', name: 'John Doe', email: 'john@example.com', position: 'Developer', department: 'Engineering', startDate: '2024-01-15' },
