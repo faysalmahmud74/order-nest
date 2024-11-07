@@ -10,6 +10,7 @@ const LoginForm = () => {
     const [userName, setUserName] = useState("")
     const [pass, setPass] = useState("")
     const [alert, setAlert] = useState(null)
+    const [credentialErr, setCredentialErr] = useState(false)
 
     //Redirect to routes
     const _signUp = () => {
@@ -21,12 +22,16 @@ const LoginForm = () => {
     }
 
     const _submitLogIn = () => {
-        if (userName.length > 0 || pass.length > 0) {
+        if ((userName.length > 0 || pass.length > 0) && (userName === "admin@domino.biz" && pass === "12345678")) {
             toast.success("Login Successful! Welcome back!")
             router('/dashboard');
         }
         else {
             setAlert((userName.length > 0 || pass.length > 0) && !isValid() && <span className='mb-4 text-xs font-semibold text-red-500'>Username or Password required</span>)
+            setCredentialErr(true)
+            toast.error("Invalid username or password. Please try again.", {
+                toastId: "CredentialErr"
+            })
         }
     }
 
@@ -87,6 +92,7 @@ const LoginForm = () => {
                             )}
                         </div>
                     </div>
+                    {/* {credentialErr && <p className='text-red-600 text-sm mb-5'>Invalid username or password. Please try again.</p>} */}
 
                     {alert}
 
