@@ -12,7 +12,7 @@ const Header = () => {
     const menuRef = useRef(null);
 
     const handleLogout = () => {
-        toast.error("Logged out");
+        toast.error("You have successfully logged out. See you next time!");
         router('/');
     };
 
