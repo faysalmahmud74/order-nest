@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PiEye, PiEyeSlash } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
 import { DEFAULT_IMAGE_URL } from './components/constants';
+import { toast } from 'react-toastify';
 
 const SignUpForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -16,6 +17,7 @@ const SignUpForm = () => {
     const router = useNavigate()
 
     const _signUp = () => {
+        toast.success("Sign-up Successful! Welcome aboard!")
         router('/')
     }
 
@@ -156,6 +158,7 @@ const SignUpForm = () => {
                         <button
                             type="submit"
                             onClick={_signUp}
+                            disabled={!isChecked}
                             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >
                             Sign Up

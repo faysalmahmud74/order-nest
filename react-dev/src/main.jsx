@@ -16,6 +16,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DeliveryNav from './delivery/index.jsx';
 import NotFound from './components/not-found.jsx';
+import ProfileCard from './components/profileCard.jsx';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -54,6 +55,7 @@ root.render(
 
         <Route path="/settings" element={<SettingsNav />} />
 
+        <Route path="/profile" element={<ProfileCard />} />
         {/* Add additional routes as needed */}
         {/* <Route path="/another-page" element={<AnotherPage />} /> */}
 
