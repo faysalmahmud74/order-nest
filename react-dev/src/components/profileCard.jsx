@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../layout";
 import { DEFAULT_USER_IMAGE_URL } from "./constants";
 import Card from "../custom-components/card";
+import { toast } from "react-toastify";
 
 const ProfileCard = () => {
     const [isEditing, setIsEditing] = useState(false);
@@ -23,7 +24,10 @@ const ProfileCard = () => {
         }));
     };
 
-    const toggleEdit = () => setIsEditing(!isEditing);
+    const toggleEdit = () => {
+        setIsEditing(!isEditing)
+        toast.success("Profile updated successfully");
+    };
 
     return (
         <Layout>
