@@ -12,16 +12,16 @@ const HomePage = () => {
     <Layout>
 
       {/* Sample Cards or Content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-        <div className='col-span-2 xl:col-span-2 2xl:col-span-3 pl-4'>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-y-4 lg:gap-4 xl:gap-4 2xl:gap-4">
+        <div className='col-span-2 xl:col-span-2 2xl:col-span-3 pl-0 lg:pl-4 xl:pl-4 2xl:pl-4'>
           <SalesSummaryCard />
         </div>
 
-        <div className='col-span-2 xl:col-span-2 2xl:col-span-2 pr-4'>
+        <div className='col-span-2 xl:col-span-2 2xl:col-span-2 pr-0 lg:pr-4 xl:pr-4 2xl:pr-4'>
           <OrderSummaryCard />
         </div>
 
-        <div className="col-span-2 pl-4">
+        <div className="col-span-2 pl-0 lg:pl-4 xl:pl-4 2xl:pl-4">
           <div className='bg-white p-5 rounded-lg shadow-md xl:min-h-[380px] 2xl:min-h-[360px]'>
             <h3 className="text-xl font-semibold">Employee Management</h3>
             <p>Manage your employees efficiently.</p>

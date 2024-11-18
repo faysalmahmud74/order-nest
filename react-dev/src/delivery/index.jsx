@@ -19,7 +19,7 @@ export default function DeliveryNav() {
     ]
     return (
         <Layout>
-            <div className="grid grid-cols-4 px-4 gap-4">
+            <div className="grid lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 px-4 gap-4">
                 {modules?.map((a) => (
                     < Module
                         icon={a?.icon}
