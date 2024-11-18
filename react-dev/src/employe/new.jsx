@@ -31,7 +31,7 @@ export default function NewEmployee() {
 
             <div className='px-4'>
                 <Card className=" p-4 text-gray-700 text-xl font-semibold mb-4">Add New Employee</Card>
-                <form onSubmit={handleSubmit} className="w-2/3 p-6 bg-white shadow-md rounded">
+                <form onSubmit={handleSubmit} className="w-full lg:w-2/3 xl:w-2/3 2xl:w-2/3 p-6 bg-white shadow-md rounded">
                     <div className="mb-4">
                         <label htmlFor="name" className="block text-gray-700 font-medium mb-1">Name</label>
                         <input
