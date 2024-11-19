@@ -40,8 +40,8 @@ const LoginForm = () => {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
-            <div className="bg-white shadow-md rounded-lg px-8 py-6 w-full max-w-sm border">
+        <div className="min-h-screen flex items-center justify-center px-4 lg:px-0 xl:px-0 2xl:px-0">
+            <div className="bg-white shadow-none lg:shadow-md xl:shadow-md 2xl:shadow-md rounded-lg px-8 py-6 w-full max-w-sm border">
 
                 <div className="flex justify-center mb-4">
                     <img

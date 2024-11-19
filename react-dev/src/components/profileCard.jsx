@@ -26,7 +26,9 @@ const ProfileCard = () => {
 
     const toggleEdit = () => {
         setIsEditing(!isEditing)
-        toast.success("Profile updated successfully");
+        if (isEditing) {
+            toast.success("Profile updated successfully");
+        }
     };
 
     return (
