@@ -41,7 +41,7 @@ const CustomerSummaryCard = () => {
   ];
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-lg">
+    <div className="p-6 bg-white rounded-lg shadow-lg min-h-[405px]">
       <h2 className="text-lg font-semibold">Customer Summary</h2>
       <p className="text-gray-500">Overview of customer activity</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
