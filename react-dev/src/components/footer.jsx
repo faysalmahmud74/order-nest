@@ -63,9 +63,9 @@ const Footer = () => {
                             </p>
                         )}
                     </div>
-                </div>
-            </footer>
-        </div>
+                </div >
+            </footer >
+        </div >
     );
 };
 
