@@ -8,21 +8,19 @@ const Footer = () => {
     useEffect(() => {
         const fetchIpAndLocation = async () => {
             try {
-                // Fetch IP address
-                const ipResponse = await fetch("https://api64.ipify.org?format=json");
-                const { ip } = await ipResponse.json();
-                setIpAddress(ip);
+                // Replace 'YOUR_API_KEY' with your actual API key from ipgeolocation.io
+                const apiKey = "09f10e24b54f4909841fb45b5d426793";
 
-                // Fetch location details using ip-api
-                const locationResponse = await fetch(`http://ip-api.com/json/${ip}`);
-                const data = await locationResponse.json();
-                if (data.status === "success") {
-                    setLocation(`${data.city}, ${data.country}`);
-                    setAdditionalInfo(data);
-                } else {
-                    setLocation("Unable to fetch location");
-                }
-            } catch {
+                // Fetch IP and location details
+                const response = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`);
+                const data = await response.json();
+
+                // Update state with the fetched data
+                setIpAddress(data.ip);
+                setLocation(`${data.city}, ${data.country_name}`);
+                setAdditionalInfo(data);
+            } catch (error) {
+                console.error("Error fetching IP and location:", error);
                 setIpAddress("Unable to fetch IP");
                 setLocation("Unable to fetch location");
             }
@@ -34,7 +32,7 @@ const Footer = () => {
     const handleMoreInfo = () => {
         if (additionalInfo) {
             alert(
-                `IP: ${additionalInfo.query}\nCity: ${additionalInfo.city}\nRegion: ${additionalInfo.regionName}\nCountry: ${additionalInfo.country}\nTimezone: ${additionalInfo.timezone}\nISP: ${additionalInfo.isp}`
+                `IP: ${additionalInfo.ip}\nCity: ${additionalInfo.city}\nRegion: ${additionalInfo.state_prov}\nCountry: ${additionalInfo.country_name}\nTimezone: ${additionalInfo.time_zone.name}\nISP: ${additionalInfo.isp}`
             );
         } else {
             alert("Additional information is unavailable.");
@@ -45,8 +43,6 @@ const Footer = () => {
         <div className="relative py-5">
             <footer className="bg-[#F3F4F6] text-gray-700 border-t border-b p-4 mt-auto fixed bottom-0 w-full">
                 <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-center">
-                    <p className='hidden lg:block xl:block 2xl:block'></p>
-                    <p className='hidden lg:block xl:block 2xl:block'></p>
                     <div className='text-center md:text-start lg:text-start xl:text-start 2xl:text-start'>
                         <p>&copy; {new Date().getFullYear()} Order Nest. All rights reserved.</p>
                         <p>UI Version: 1.0.3 | Developed by Faysal Mahmud</p>
@@ -67,10 +63,9 @@ const Footer = () => {
                             </p>
                         )}
                     </div>
-
-                </div>
-            </footer>
-        </div>
+                </div >
+            </footer >
+        </div >
     );
 };
 
