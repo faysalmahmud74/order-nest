@@ -45,7 +45,7 @@ const Footer = () => {
                 <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-center">
                     <p className='hidden lg:block xl:block 2xl:block'></p>
                     <p className='hidden lg:block xl:block 2xl:block'></p>
-                    <div className='text-center md:text-start lg:text-start xl:text-start 2xl:text-start'>
+                    <div className='text-center md:text-start lg:text-start xl:text-center 2xl:text-center'>
                         <p>&copy; {new Date().getFullYear()} Order Nest. All rights reserved.</p>
                         <p>UI Version: 1.0.3 | Developed by Faysal Mahmud</p>
                     </div>
