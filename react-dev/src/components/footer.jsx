@@ -43,6 +43,8 @@ const Footer = () => {
         <div className="relative py-5">
             <footer className="bg-[#F3F4F6] text-gray-700 border-t border-b p-4 mt-auto fixed bottom-0 w-full">
                 <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-center">
+                    <p className='hidden lg:block xl:block 2xl:block'></p>
+                    <p className='hidden lg:block xl:block 2xl:block'></p>
                     <div className='text-center md:text-start lg:text-start xl:text-start 2xl:text-start'>
                         <p>&copy; {new Date().getFullYear()} Order Nest. All rights reserved.</p>
                         <p>UI Version: 1.0.3 | Developed by Faysal Mahmud</p>
