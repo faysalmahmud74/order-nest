@@ -38,12 +38,12 @@ Follow these steps to set up OrderNest locally:
 
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/yourusername/ordernest.git  
+   git clone https://github.com/faysalmahmud74/react-dev.git 
    ```  
 
 2. Navigate to the project directory:  
    ```bash  
-   cd ordernest  
+   cd react-dev/react-dev   
    ```  
 
 3. Install dependencies:  
