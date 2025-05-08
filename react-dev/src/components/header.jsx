@@ -1,16 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { DEFAULT_USER_IMAGE_URL } from './constants';
 import Breadcrumbs from './breadcrumbs';
+import { AuthContext } from './auth-context';
 
 const Header = () => {
     const router = useNavigate();
+    const { setIsAuthenticated } = useContext(AuthContext);
     const [isMenu, setIsMenu] = useState(false);
     const menuRef = useRef(null);
 
     const handleLogout = () => {
+        setIsAuthenticated(false); // Update authentication status
+        localStorage.removeItem('isAuthenticated'); // Clear authentication state from localStorage
         toast.error("You have successfully logged out. See you next time!");
         router('/');
     };

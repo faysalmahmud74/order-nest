@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { PiEye, PiEyeSlash } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
 import { DEFAULT_IMAGE_URL } from './components/constants';
 import { toast } from 'react-toastify';
+import { AuthContext } from './components/auth-context';
 
 const LoginForm = () => {
     const router = useNavigate();
+    const { setIsAuthenticated } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const [userName, setUserName] = useState("")
     const [pass, setPass] = useState("")
@@ -23,15 +25,15 @@ const LoginForm = () => {
 
     const _submitLogIn = () => {
         if ((userName.length > 0 || pass.length > 0) && (userName === "admin@domino.biz" && pass === "12345678")) {
-            toast.success("Login Successful! Welcome back!")
+            toast.success("Login Successful! Welcome back!");
+            setIsAuthenticated(true); // Update authentication status
             router('/dashboard');
-        }
-        else {
-            setAlert((userName.length > 0 || pass.length > 0) && !isValid() && <span className='mb-4 text-xs font-semibold text-red-500'>Username or Password required</span>)
-            setCredentialErr(true)
+        } else {
+            setAlert((userName.length > 0 || pass.length > 0) && !isValid() && <span className='mb-4 text-xs font-semibold text-red-500'>Username or Password required</span>);
+            setCredentialErr(true);
             toast.error("Invalid username or password. Please try again.", {
                 toastId: "CredentialErr"
-            })
+            });
         }
     }
 

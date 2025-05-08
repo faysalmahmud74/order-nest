@@ -17,51 +17,52 @@ import 'react-toastify/dist/ReactToastify.css';
 import DeliveryNav from './delivery/index.jsx';
 import NotFound from './components/not-found.jsx';
 import ProfileCard from './components/profileCard.jsx';
+import PrivateRoute from './components/private-route.jsx';
+import AuthProvider from './components/auth-context.jsx';
+
+const Main = () => {
+  return (
+    <StrictMode>
+      <AuthProvider>
+        <Router>
+
+          <ToastContainer  //react-toastify config default
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={true}
+            closeOnClick
+            pauseOnHover
+            theme="colored"
+          />
+
+          <Routes>
+            {/* Route for Login Page */}
+            <Route path="/" element={<LoginForm />} />
+
+            {/* Protected Routes */}
+            <Route path="/dashboard" element={<PrivateRoute><App /></PrivateRoute>} />
+            <Route path="/signUp" element={<SignUpForm />} />
+            <Route path="/app" element={<PrivateRoute><HomePage /></PrivateRoute>} />
+            <Route path="/order" element={<PrivateRoute><OrderNav /></PrivateRoute>} />
+            <Route path="/employees" element={<PrivateRoute><EmployeeNav /></PrivateRoute>} />
+            <Route path="/employees/new" element={<PrivateRoute><NewEmployee /></PrivateRoute>} />
+            <Route path="/employees/list" element={<PrivateRoute><EmployeeList /></PrivateRoute>} />
+            <Route path="/delivery" element={<PrivateRoute><DeliveryNav /></PrivateRoute>} />
+            <Route path="/reports" element={<PrivateRoute><ReportsNav /></PrivateRoute>} />
+            <Route path="/settings" element={<PrivateRoute><SettingsNav /></PrivateRoute>} />
+            <Route path="/profile" element={<PrivateRoute><ProfileCard /></PrivateRoute>} />
+
+            {/* Catch-all route for undefined paths */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
+    </StrictMode>
+  );
+};
 
 const root = createRoot(document.getElementById('root'));
+root.render(<Main />);
 
-root.render(
-  <StrictMode>
-    <Router>
-
-      <ToastContainer  //react-toastify config defalut
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={true}
-        closeOnClick
-        pauseOnHover
-        theme="colored"
-      />
-
-      <Routes>
-        {/* Route for Login Page */}
-        <Route path="/" element={<LoginForm />} />
-
-        {/* Route for Main Application after Login */}
-        <Route path="/dashboard" element={<App />} />
-        <Route path="/signUp" element={<SignUpForm />} />
-        <Route path="/app" element={<HomePage />} />
-
-        <Route path="/order" element={<OrderNav />} />
-
-        <Route path="/employees" element={<EmployeeNav />} />
-        <Route path="/employees/new" element={<NewEmployee />} />
-        <Route path="/employees/list" element={<EmployeeList />} />
-
-        <Route path="/delivery" element={<DeliveryNav />} />
-
-        <Route path="/reports" element={<ReportsNav />} />
-
-        <Route path="/settings" element={<SettingsNav />} />
-
-        <Route path="/profile" element={<ProfileCard />} />
-        {/* Add additional routes as needed */}
-        {/* <Route path="/another-page" element={<AnotherPage />} /> */}
-
-        {/* Catch-all route for undefined paths */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
-  </StrictMode>
-);
+export default Main;
