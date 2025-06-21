@@ -8,6 +8,7 @@ import {
     FaBars,
     FaShippingFast,
 } from "react-icons/fa";
+import { FaCartShopping } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
@@ -46,6 +47,32 @@ const Sidebar = () => {
                             >
                                 <FaHome className="mr-3" />
                                 Dashboard
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/product"
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "flex items-center hover:text-teal-600 bg-blue-500 text-white py-2 rounded-lg px-2"
+                                        : "text-gray-600 flex items-center hover:text-teal-600 px-2"
+                                }
+                            >
+                                <FaClipboardList className="mr-3" />
+                                Product
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/invoice"
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "flex items-center hover:text-teal-600 bg-blue-500 text-white py-2 rounded-lg px-2"
+                                        : "text-gray-600 flex items-center hover:text-teal-600 px-2"
+                                }
+                            >
+                                <FaCartShopping className="mr-3" />
+                                Sales
                             </NavLink>
                         </li>
                         <li>
